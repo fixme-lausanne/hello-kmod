@@ -7,6 +7,7 @@ clean:
 	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
 
 load: hello.ko
+	sudo sync # better safe than sorry
 	sudo insmod hello.ko
 
 unload:
